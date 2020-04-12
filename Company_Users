@@ -1,0 +1,18 @@
+command = input()
+information = {}
+while command != "End":
+    comanda = command.split(" -> ")
+    companyName = comanda[0]
+    idN = comanda[1]
+    if companyName not in information:
+        information[companyName] = []
+    if idN not in information[companyName]:
+        information[companyName].append(idN)
+    command = input()
+
+information = dict(sorted(information.items(), key=lambda el: el[0]))
+
+for companyName, idN in information.items():
+    print(companyName)
+    for i in information[companyName]:
+        print(f"-- {i}")
