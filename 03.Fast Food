@@ -1,0 +1,28 @@
+import collections
+
+Fail = False
+quantity_food = int(input())
+
+orders = input()
+orders = orders.split(" ")
+
+for i in range(0, len(orders)):
+    orders[i] = int(orders[i])
+
+print(max(orders))
+
+orders = collections.deque(orders)
+
+while orders:
+    if quantity_food >= int(orders[0]):
+        quantity_food -= int(orders[0])
+        orders.popleft()
+    else:
+        Fail = True
+        orders = [str(i) for i in orders]
+        orders = " ".join(orders)
+        print(f"Orders left: {orders}")
+        break
+
+if not Fail:
+    print("Orders complete")
