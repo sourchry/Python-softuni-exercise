@@ -1,0 +1,17 @@
+number = int(input())
+n = 1
+my_list = []
+calculation = 0
+
+while True:
+    calculation = 2*(n**2)
+    if number <= calculation:
+        if number > 0:
+            my_list.append(number)
+        break
+    my_list.append(calculation)
+    n += 1
+    number -= calculation
+
+
+print(my_list)
