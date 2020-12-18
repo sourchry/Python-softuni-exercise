@@ -1,0 +1,14 @@
+(row, col) = input().split(" ")
+matrix = []
+count = 0
+
+for k in range(int(row)):
+    line = input().split(" ")
+    matrix.append(line)
+
+for i in range(int(row)-1):
+    for n in range(int(col)-1):
+        if matrix[i][n] == matrix[i+1][n+1] == matrix[i+1][n] == matrix[i][n+1]:
+            count += 1
+
+print(count)
